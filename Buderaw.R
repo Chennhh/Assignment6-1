@@ -19,9 +19,9 @@ geopath <- rbind(gc3,gc4)%>%
 
 #Watermap#
 watermap <- ggmap(Wbude) +
-  geom_point(data = geocomb,
-             aes(x = lon, y = lat, size=location),
-             color = "red") 
+  geom_point(
+    aes(x = lon, y = lat ),
+    data = geocomb, color = "red", size =3 ) 
 
 watermap
 
@@ -71,13 +71,13 @@ print(BudeSeaPool)
 image_write(BudeSeaPool, "BudeSeaPool.jpg", format="jpg")
 
 #Images of Sandymouth Beach
-SandymouthBeach <- image_scale(image_read('http://www.beachesincornwall.co.uk/wp-content/uploads/2017/04/bude-sandymouth.jpg'),geometry_area(400,400))
+SandymouthBeach <- image_scale(image_read('https://www.cornwall-beaches.co.uk/public/photos/sandymouth.jpg'),geometry_area(400,400))
 print(SandymouthBeach)
 
 image_write(SandymouthBeach, "SandymouthBeach.jpg", format="jpg")
 
 #Images of Bude North Cornwall Cricket Club#
-Budecricket <- image_scale(image_read('https://www.telegraph.co.uk/content/dam/Travel/galleries/travel/destinations/europe/uk/Englands-most-beautiful-cricket-grounds/cricket-bude_3378037a.jpg?imwidth=1400'),geometry_area(400,400))
+Budecricket <- image_scale(image_read('https://i.pinimg.com/originals/42/21/20/42212062d2dbf181dc1b1eaa160dce53.jpg'),geometry_area(400,400))
 print(Budecricket)
 
 image_write(Budecricket, "Budecricket.jpg", format = "jpg")
